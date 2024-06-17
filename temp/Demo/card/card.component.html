@@ -1,0 +1,56 @@
+<!-- <p>card works! {{ title }}</p>
+<p>button component placed here {{ count }}</p> -->
+<!-- <app-button (sendPrice)="getPriceFromChild($event)"></app-button> -->
+
+@defer (when loadBtn) {
+<!-- when to load this content we need to mention as a boolean value (loadBtn) -->
+<app-button
+  #btnComp
+  (sendPrice)="getPriceFromChild($event)"
+  [modifyFn]="modifyFn"
+>
+  <div header>Header Content</div>
+  <p basic>Content projected from ParentComponent</p>
+</app-button>
+
+
+} @placeholder(minimum 2000ms) {
+<!-- will be shown for 500ms prevents flickering -->
+<!-- the @placeholder is visible until the component gets rendered -->
+<p>Wait for some time button component loading...</p>
+} @loading(after 100ms; minimum 1s) {
+<!-- after 100ms and will show 1s -->
+<!-- thr loading block is visible while loading the lazy chunk -->
+<span>Loading...</span>
+} @error {
+<!-- @error block  is visible when a loading error occurred -->
+<span>Oops! Something went wrong</span>
+}
+<!-- defer methods -->
+@defer (on idle) {
+<!--on idle fetch and display -->
+<!-- use the on declarative trigger to 
+  select under which action to
+   fetch and display the component -->
+}
+<!-- immediate -->
+@defer (on immediate) {
+<!-- fetch and diplay immediately on template execution -->
+}
+<!-- interaction -->
+@defer (on interaction) {
+<!-- fetch and display on an implicit interaction -->
+}@placeholder {
+<p>click to load</p>
+}
+
+<div [ngStyle]="dynamicStyles">
+  <p>Card Component</p>
+</div>
+
+<div>Content: <ng-content></ng-content></div>
+<button (click)="highlightFirstHeading()">Highlight First Heading</button>
+
+<input type="text" #searchValue />
+
+<button (click)="alertMessage()">alert the message</button>

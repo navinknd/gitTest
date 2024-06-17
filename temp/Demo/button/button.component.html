@@ -1,0 +1,48 @@
+<!-- <p (click)="sendSomething()">button works! {{ count }}</p>
+<p #testViewChild>view child</p> -->
+
+<div class="header">
+  <ng-content select="[header]"></ng-content>
+</div>
+<div class="content">
+  <ng-content select="[basic]"></ng-content>
+</div>
+<ng-container *ngFor="let data of items">
+  <ng-container
+    [ngTemplateOutlet]="getTemplate"
+    [ngTemplateOutletContext]="{ item: data }"
+  >
+  </ng-container>
+</ng-container>
+
+<ng-template #textTemplate let-item="item">
+  <div>{{ item }}</div>
+</ng-template>
+
+<ng-template #numberTemplate let-item="item">
+  <div>{{ item }} is a number</div>
+</ng-template>
+
+<ng-template #getTemplate let-data="item">
+  <ng-container
+    *ngIf="false; then textTemplate; else numberTemplate"
+  ></ng-container>
+</ng-template>
+
+<!-- using template ref clicking the file input instead of using the document.getElementByID("IdName") -->
+<div>
+  <button type="button" (click)="fileInput.click()">Pick Image</button>
+  <input
+    type="file"
+    #fileInput
+    style="display: none"
+    (change)="onImagePicked($event)"
+  />
+  <img *ngIf="imagePreview" [src]="imagePreview" />
+  <button (click)="downloadImage()">Download Image</button>
+</div>
+
+<div>
+  {{ changeText }}<button (click)="encodeText()">Encode</button
+  ><button (click)="decodeText()">Decode</button>
+</div>
