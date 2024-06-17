@@ -1,0 +1,7 @@
+{
+    "welcome_message": "Welcome to our application!",
+    "products": {
+        "title": "Our Products",
+        "description": "Explore a wide variety of amazing products."
+    }
+}

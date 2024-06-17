@@ -1,0 +1,86 @@
+<!-- <app-header></app-header> -->
+<!-- *****************************************binding class name and style dynamic***************************************************************** -->
+
+<!-- <div class="card" (click)="changeColor()">
+  <p [class.red]="isGreen" [class.green]="!isGreen">
+    Property binding with class names.</p
+  >
+  <p [ngClass]="{ red: isGreen, green: !isGreen }">
+    ngClass directive with object syntax.
+  </p>
+  <p [class]="isGreen ? 'red' : 'green'">
+    Property binding with ternary operator for class names.</p
+  >
+  <p [ngClass]="[isGreen ? 'red' : 'green', !isGreen ? 'bold' : 'normal']">
+    ngClass directive with array syntax for multiple classes.
+  </p>
+  <p [attr.class]="isGreen ? 'red' : 'green'">
+    [attr.class] directive for class names.
+  </p>
+</div>
+
+<p
+  [ngStyle]="{
+    color: isGreen ? 'red' : 'green',
+    fontSize: isGreen ? '24px' : '16px',
+    'font-weight': isGreen ? 'bold' : '700'
+  }"
+>
+  Using object syntax with ngStyle for multiple styles.
+</p>
+<p [style.color]="isGreen ? 'red' : 'green'">
+  Using property binding for single style.
+</p>
+<p [attr.style]="isGreen ? 'color: red' : 'color: green'">
+  Using [attr.style] directive for inline styles.
+</p>
+<p [style.width.%]="50"> Binding to dynamic width.</p> -->
+
+<!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicin.</p> -->
+
+<!-- *********************************************Transalte****************viewChild*******************viewChildren************************** -->
+
+<!-- <app-card [title]="title">
+  <h1 #heading>This is the first heading</h1>
+  <p>Some other content</p>
+  <p #paragraph>This is the first paragraph.</p>
+  <p #paragraph>This is the second paragraph.</p>
+</app-card> -->
+<!-- <app-footer></app-footer> -->
+
+<!-- <h1>{{ "welcome_message" | translate | uppercase }}</h1>
+
+<h2>{{ "products.title" | translate | uppercase }}</h2>
+<p>{{ "products.description" | translate }}</p>
+
+<button (click)="switchLanguage('fr')">French</button>
+<button (click)="switchLanguage('en-US')">English</button>
+<button (click)="switchLanguage('tamil')">Tamil</button> -->
+
+<!-- *****************************************ngTemplateOutlet*************************structural directive**************************************** -->
+
+<p>practice component</p>
+<!-- defined template -->
+<!-- <ng-template #searchContainer>
+  <h2>Search Products</h2>
+  <input type="text" />
+</ng-template> -->
+<!-- use the template outlet to render the template  -->
+<!-- <div *ngTemplateOutlet="searchContainer"></div> -->
+
+<!-- <div *ngIf="title === 'dell'; else apple"
+  >It's Dell Laptop</div
+>
+<ng-template #apple>
+  <div>It's Apple Laptop</div>
+</ng-template>
+ -->
+
+<!-- *********************************************ng-container************************************************************* -->
+<!-- we can use for ngFor,ngif multiple directives  -->
+<ng-container *ngIf="title === 'dell'; else apple"
+  >It's Dell Laptop</ng-container
+>
+<ng-template #apple>
+  <div>It's Apple Laptop</div>
+</ng-template>

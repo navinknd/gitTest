@@ -1,0 +1,82 @@
+<div class="container">
+  <form #registerForm="ngForm" (ngSubmit)="submit()">
+    <label for="text_input">Name Input:</label><br />
+    <input
+      type="text"
+      id="text_input"
+      ngModel
+      name="text_input"
+      required
+    /><br /><br />
+
+    <label for="email_input">Email Input:</label><br />
+    <input
+      type="email"
+      id="email_input"
+      ngModel
+      name="email_input"
+      required
+      email
+    /><br /><br />
+
+    <label for="password_input">Password Input:</label><br />
+    <input
+      type="password"
+      id="password_input"
+      ngModel
+      #password="ngModel"
+      name="password_input"
+    /><br /><br />
+
+    <label for="number_input">Number Input:</label><br />
+    <input
+      type="number"
+      id="number_input"
+      ngModel
+      name="number_input"
+    /><br /><br />
+
+    <label for="date_input">Date Input:</label><br />
+    <input type="date" id="date_input" ngModel name="date_input" /><br /><br />
+
+    <label for="select_input">Select Input:</label><br />
+    <select id="select_input" ngModel name="select_input">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option></select
+    ><br /><br />
+
+    <label for="checkbox_input">Checkbox Input:</label><br />
+    <input
+      type="checkbox"
+      id="checkbox_input"
+      ngModel
+      name="checkbox_input"
+      value="checkbox_value"
+    /><br /><br />
+
+    <label for="radio_input">Radio Input:</label><br />
+    <input
+      type="radio"
+      id="radio_input1"
+      ngModel
+      name="radio_input"
+      value="radio_value1"
+    />
+    <label for="radio_input1">Option 1</label><br />
+    <input
+      type="radio"
+      id="radio_input2"
+      ngModel
+      name="radio_input"
+      value="radio_value2"
+    />
+    <label for="radio_input2">Option 2</label><br /><br />
+
+    <label for="file_input">File Input:</label><br />
+    <input type="file" id="file_input" ngModel name="file_input" /><br /><br />
+
+    <label for="submit_input">Submit Input:</label><br />
+    <input type="submit" id="submit_input" value="Submit Form" /><br /><br />
+  </form>
+</div>
