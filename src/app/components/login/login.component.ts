@@ -17,7 +17,7 @@ export class LoginComponent {
   message = signal<string[]>([]);
   doubleCounter = computed(() => this.counter() * 2);
   polledData: any[] = [];
-  private pollingInterval$ = interval(500); // Poll every 5 seconds
+  private pollingInterval$ = interval(1000); // Poll every 5 seconds
   private destroy$ = new Subject<void>();
 
   constructor() {
