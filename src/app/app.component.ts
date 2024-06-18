@@ -17,28 +17,28 @@ export class AppComponent {
   router: Router = inject(Router)
   sanitizer: DomSanitizer = inject(DomSanitizer)
   ngOnInit(): void {
-    // const sanitizer = this.sanitizer.bypassSecurityTrustUrl(this.title)
-    // this.router.events.subscribe((routerEvent: any) => {
-    //   if (routerEvent instanceof NavigationStart) {
-    //     console.log('show loader NavigationStart');
+    const sanitizer = this.sanitizer.bypassSecurityTrustUrl(this.title)
+    this.router.events.subscribe((routerEvent: any) => {
+      if (routerEvent instanceof NavigationStart) {
+        console.log('show loader NavigationStart');
 
-    //     // show loader
-    //   }
-    //   if (routerEvent instanceof NavigationEnd) {
-    //     console.log('hide loader NavigationEnd');
+        // show loader
+      }
+      if (routerEvent instanceof NavigationEnd) {
+        console.log('hide loader NavigationEnd');
 
-    //     // hide loader
-    //   }
-    //   if (routerEvent instanceof NavigationCancel) {
-    //     console.log('hide loader NavigationCancel');
+        // hide loader
+      }
+      if (routerEvent instanceof NavigationCancel) {
+        console.log('hide loader NavigationCancel');
 
-    //     // hide loader
-    //   }
-    //   if (routerEvent instanceof NavigationError) {
-    //     console.log('hide loader NavigationError');
+        // hide loader
+      }
+      if (routerEvent instanceof NavigationError) {
+        console.log('hide loader NavigationError');
 
-    //     // hide loader
-    //   }
-    // })
+        // hide loader
+      }
+    })
   }
 }
