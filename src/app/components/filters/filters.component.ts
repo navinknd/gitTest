@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './filters.component.scss'
 })
 export class FiltersComponent {
+  ngOnInit(): void {
+    console.log('ngOnInit');
 
+  }
 }
