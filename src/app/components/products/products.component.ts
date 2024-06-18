@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log('feature2 fistt commit');
 
+  }
 }
