@@ -20,7 +20,7 @@ export class AppComponent {
     const sanitizer = this.sanitizer.bypassSecurityTrustUrl(this.title)
     this.router.events.subscribe((routerEvent: any) => {
       if (routerEvent instanceof NavigationStart) {
-        console.log('show loader NavigationStart checrry-pick1');
+        console.log('show loader NavigationStart checrry-pick2');
 
         // show loader
       }
