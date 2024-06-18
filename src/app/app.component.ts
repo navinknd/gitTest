@@ -21,6 +21,8 @@ export class AppComponent {
     this.router.events.subscribe((routerEvent: any) => {
       if (routerEvent instanceof NavigationStart) {
         console.log('show loader NavigationStart');
+        console.log("feature2 second");
+        
       }
       if (routerEvent instanceof NavigationEnd) {
         console.log('hide loader NavigationEnd');
